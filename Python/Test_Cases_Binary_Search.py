@@ -1,0 +1,78 @@
+
+# Lesson 1 - Binary Search, Linked Lists and Complexity
+# the following is a test function for the binary search used to test various queries
+
+# Step 1
+
+# We need to write a program to find the position of a given number in a list
+# of numbers arranged in decreasing order. We also need to minimize the number
+# of times we access elements from the list. Identifu input and output formats.
+
+# Step 2 
+
+# Come up with some example inputs & outputs. Try to cover all edge cases.
+
+
+import timeit
+
+# Step 3
+
+# Come up with a correct solution for the problem. State it in plain English
+
+
+    # 1. Create a variable position with the value 0.
+    # 2. Check whether the number at index position in card equals query.
+    # 3. If it does, position is the answer and can be returned from the function
+    # 4. If not, increment the value of position by 1, and repeat steps 2 to 5 till we reach the last position.
+    # 5. If the number was not found, return -1.
+
+# Function
+
+def locate_card(cards, query):
+     # Create a variable position with the value 0
+    position = 0
+    # Set up a loop for repetition that also test empty array
+    while position < len(cards):
+        # Check if element at the current position matches the query
+        if cards[position] == query:
+            # Answer found! Return and exit..
+            return position
+        # Increment the position
+        position += 1
+    # Number not found, return -1
+    return -1
+
+
+
+
+# Test Dictionary - can iput different test case scenerios
+
+test = {
+    'input': { 
+        'cards': [13, 11, 10, 7, 4, 3, 1, 0], 
+        'query': 7
+    },
+    'output': 3
+}
+
+
+# Create elapsed time and correct printouts based on jovian jovian evaluate_test_case
+
+stmt = "locate_card(**test['input'])"
+setup = "from __main__ import locate_card, test"
+
+time_elapsed = timeit.timeit(stmt, setup=setup, number=1000)
+
+expected_output = test['output']
+actual_output = locate_card(**test['input'])
+
+print("Input: ", test['input'])
+print("Expected output: ", expected_output)
+print("Actual output: ", actual_output)
+print("Execution time: {:.2f} ms".format(time_elapsed * 1000))
+
+if actual_output == expected_output:
+    print("\033[92mTest result: Passed\033[0m")
+else:
+    print("\033[91mTest result: Failed\033[0m")
+
