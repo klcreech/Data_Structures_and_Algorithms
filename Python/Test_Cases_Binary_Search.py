@@ -12,19 +12,8 @@
 
 # Come up with some example inputs & outputs. Try to cover all edge cases.
 
-
 import timeit
 
-# Step 3
-
-# Come up with a correct solution for the problem. State it in plain English
-
-
-    # 1. Create a variable position with the value 0.
-    # 2. Check whether the number at index position in card equals query.
-    # 3. If it does, position is the answer and can be returned from the function
-    # 4. If not, increment the value of position by 1, and repeat steps 2 to 5 till we reach the last position.
-    # 5. If the number was not found, return -1.
 
 # Function
 
@@ -42,67 +31,88 @@ def locate_card(cards, query):
     # Number not found, return -1
     return -1
 
-# Various Test cases
 
-    # query occurs in the middle
-    #         'input': {
-    #             'cards': [13, 11, 10, 7, 4, 3, 1, 0],
-    #             'query': 1
-    #         },
-    #         'output': 6
+# Test cases with various included edge cases
 
-
-    # query is the first element
-    #         'input': {
-    #             'cards': [4, 2, 1, -1],
-    #             'query': 4
-    #         },
-    #         'output': 0
-
-    # query is the last element
-    #         'input': {
-    #             'cards': [3, -1, -9, -127],
-    #             'query': -127
-    #         },
-    #         'output': 3
-
-    
-     # cards contains just one element, query
-    #         'input': {
-    #             'cards': [6],
-    #             'query': 6
-    #         },
-    #         'output': 0
-
-
-
-# Test Dictionary - can iput different test case scenerios
-
-test = {
-    'input': { 
-        'cards': [13, 11, 10, 7, 4, 3, 1, 0], 
-        'query': 7
+tests = [
+    {
+        'input': { 
+            'cards': [13, 11, 10, 7, 4, 3, 1, 0], 
+            'query': 7
+        },
+        'output': 3
     },
-    'output': 3
-}
+    {
+        'input': {
+            'cards': [4, 2, 1, -1],
+            'query': 4
+        },
+        'output': 0
+    },
+    {
+        'input': {
+            'cards': [3, -1, -9, -127],
+            'query': -127
+        },
+        'output': 3
+    },
+    {
+        'input': {
+            'cards': [6],
+            'query': 6
+        },
+        'output': 0
+    },
+    {
+        'input': {
+            'cards': [],
+            'query': 6
+        },
+        'output': -1
+    },
+    {
+        'input': {
+            'cards': [1, 3, 5, 7],
+            'query': 2
+        },
+        'output': -1
+    },
+    {
+        'input': {
+            'cards': [],
+            'query': 7
+        },
+        'output': 0
+    }
+]
 
-# Create elapsed time and correct printouts based on jovian jovian evaluate_test_case
+# Run test cases and handle index errors
 
-stmt = "locate_card(**test['input'])"
-setup = "from __main__ import locate_card, test"
+for i, test in enumerate(tests):
+    try:
+        stmt = "locate_card(**tests[{}]['input'])".format(i)
+        setup = "from __main__ import locate_card, tests"
+        time_elapsed = timeit.timeit(stmt, setup=setup, number=1000)
+        expected_output = test['output']
+        actual_output = locate_card(**test['input'])
+        print("Test case ", i+1, " - Input: ", test['input'])
+        print("Expected output: ", expected_output)
+        print("Actual output: ", actual_output)
+        print("Execution time: {:.2f} ms".format(time_elapsed * 1000))
+        if actual_output == expected_output:
+            print("\033[92mTest result: Passed\033[0m")
+        else:
+            print("\033[91mTest result: Failed\033[0m")
+    except Exception as e:
+        print("\033[91mTest case ", i+1, " - Failed: ", e, "\033[0m")
 
-time_elapsed = timeit.timeit(stmt, setup=setup, number=1000)
+# Step 3
 
-expected_output = test['output']
-actual_output = locate_card(**test['input'])
+# Come up with a correct solution for the problem. State it in plain English
 
-print("Input: ", test['input'])
-print("Expected output: ", expected_output)
-print("Actual output: ", actual_output)
-print("Execution time: {:.2f} ms".format(time_elapsed * 1000))
 
-if actual_output == expected_output:
-    print("\033[92mTest result: Passed\033[0m")
-else:
-    print("\033[91mTest result: Failed\033[0m")
-
+    # 1. Create a variable position with the value 0.
+    # 2. Check whether the number at index position in card equals query.
+    # 3. If it does, position is the answer and can be returned from the function
+    # 4. If not, increment the value of position by 1, and repeat steps 2 to 5 till we reach the last position.
+    # 5. If the number was not found, return -1.
