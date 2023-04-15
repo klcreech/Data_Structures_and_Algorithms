@@ -55,7 +55,6 @@ test = {
     'output': 3
 }
 
-
 # Create elapsed time and correct printouts based on jovian jovian evaluate_test_case
 
 stmt = "locate_card(**test['input'])"
