@@ -66,13 +66,7 @@ def locate_card(cards, query):
     #         },
     #         'output': 3
 
-    # cards contains just one element, query
-    #         'input': {
-    #             'cards': [3, -1, -9, -127],
-    #             'query': -127
-    #         },
-    #         'output': 3
-
+    
      # cards contains just one element, query
     #         'input': {
     #             'cards': [6],
