@@ -35,6 +35,7 @@ def locate_card(cards, query):
 # Test cases with various included edge cases
 
 tests = [
+    # query occurs in the middle
     {
         'input': { 
             'cards': [13, 11, 10, 7, 4, 3, 1, 0], 
@@ -42,6 +43,7 @@ tests = [
         },
         'output': 3
     },
+    # query is the first element
     {
         'input': {
             'cards': [4, 2, 1, -1],
@@ -49,6 +51,7 @@ tests = [
         },
         'output': 0
     },
+    # query is the last element
     {
         'input': {
             'cards': [3, -1, -9, -127],
@@ -56,6 +59,7 @@ tests = [
         },
         'output': 3
     },
+     # cards contains just one element
     {
         'input': {
             'cards': [6],
@@ -63,6 +67,19 @@ tests = [
         },
         'output': 0
     },
+
+    # Step 3
+
+    # Come up with a correct solution for the problem. State it in plain English
+
+
+    # 1. Create a variable position with the value 0.
+    # 2. Check whether the number at index position in card equals query.
+    # 3. If it does, position is the answer and can be returned from the function
+    # 4. If not, increment the value of position by 1, and repeat steps 2 to 5 till we reach the last position.
+    # 5. If the number was not found, return -1.
+    
+    # cards contains no element output -1
     {
         'input': {
             'cards': [],
@@ -70,6 +87,7 @@ tests = [
         },
         'output': -1
     },
+     # cards contains no element of query output -1
     {
         'input': {
             'cards': [1, 3, 5, 7],
@@ -77,6 +95,7 @@ tests = [
         },
         'output': -1
     },
+     # forces fail Test
     {
         'input': {
             'cards': [],
@@ -106,13 +125,3 @@ for i, test in enumerate(tests):
     except Exception as e:
         print("\033[91mTest case ", i+1, " - Failed: ", e, "\033[0m")
 
-# Step 3
-
-# Come up with a correct solution for the problem. State it in plain English
-
-
-    # 1. Create a variable position with the value 0.
-    # 2. Check whether the number at index position in card equals query.
-    # 3. If it does, position is the answer and can be returned from the function
-    # 4. If not, increment the value of position by 1, and repeat steps 2 to 5 till we reach the last position.
-    # 5. If the number was not found, return -1.
