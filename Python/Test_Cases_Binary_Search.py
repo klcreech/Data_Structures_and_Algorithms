@@ -102,14 +102,14 @@ tests = [
             'query': 3
         },
         'output': 7
-    }
+    },
     # query occurs multiple times
     {
         'input': {
-            'cards': [8, 8, 6, 6, 6, 6, 6, 3, 2, 2, 2, 0, 0, 0],
-            'query': 3
-        },
-        'output': 0
+            'cards': [8, 8, 6, 6, 6, 6, 6, 6, 3, 2, 2, 2, 0, 0, 0],
+            'query': 6
+       },
+        'output': 2
     }
 
 ]
