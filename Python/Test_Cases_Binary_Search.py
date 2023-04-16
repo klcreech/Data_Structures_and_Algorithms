@@ -87,11 +87,11 @@ tests = [
     },
         'output': -1
     },
-     # cards contains no element of query output -1
+     # cards is empty
     {
         'input': {
-            'cards': [1, 3, 5, 7],
-            'query': 2
+            'cards': [],
+             'query': 7
         },
         'output': -1
     },
