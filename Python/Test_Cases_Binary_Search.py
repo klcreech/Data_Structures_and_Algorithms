@@ -95,11 +95,11 @@ tests = [
         },
         'output': -1
     },
-     # forces fail Test
+     # numbers can repeat in cards
     {
         'input': {
-            'cards': [],
-            'query': 7
+            'cards': [8, 8, 6, 6, 6, 6, 6, 3, 2, 2, 2, 0, 0, 0],
+            'query': 3
         },
         'output': 0
     }
