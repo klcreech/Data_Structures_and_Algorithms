@@ -78,13 +78,13 @@ tests = [
     # 3. If it does, position is the answer and can be returned from the function
     # 4. If not, increment the value of position by 1, and repeat steps 2 to 5 till we reach the last position.
     # 5. If the number was not found, return -1.
-    
+
     # cards contains no element output -1
     {
         'input': {
-            'cards': [],
-            'query': 6
-        },
+           'cards': [9, 7, 5, 2, -9],
+            'query': 4
+    },
         'output': -1
     },
      # cards contains no element of query output -1
