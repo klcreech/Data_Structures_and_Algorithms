@@ -1,17 +1,3 @@
-
-# Lesson 1 - Binary Search, Linked Lists and Complexity
-# the following is a test function for the binary search used to test various queries
-
-# Step 1
-
-# We need to write a program to find the position of a given number in a list
-# of numbers arranged in decreasing order. We also need to minimize the number
-# of times we access elements from the list. Identifu input and output formats.
-
-# Step 2 
-
-# Come up with some example inputs & outputs. Try to cover all edge cases.
-
 import timeit
 
 
@@ -29,6 +15,37 @@ def locate_card(cards, query):
         # Increment the position
         position += 1
     # Number not found, return -1
+    return -1
+
+# new
+
+def test_location(cards, query, mid):
+    mid_number = cards[mid]
+    print("mid:", mid, ", mid_number:", mid_number)
+    if mid_number == query:
+        if mid-1 >= 0 and cards[mid-1] == query:
+            return 'left'
+        else:
+            return 'found'
+    elif mid_number < query:
+        return 'left'
+    else:
+        return 'right'
+
+def locate_card_new(cards, query):
+    lo, hi = 0, len(cards) - 1
+    
+    while lo <= hi:
+        print("lo:", lo, ", hi:", hi)
+        mid = (lo + hi) // 2
+        result = test_location(cards, query, mid)
+        
+        if result == 'found':
+            return mid
+        elif result == 'left':
+            hi = mid - 1
+        elif result == 'right':
+            lo = mid + 1
     return -1
 
 
@@ -139,7 +156,9 @@ for i, test in enumerate(tests):
         print("Test case ", i+1, " - Input: ", test['input'])
         print("Expected output: ", expected_output)
         print("Actual output: ", actual_output)
-        print("Execution time: {:.2f} ms".format(time_elapsed * 1000))
+        print("Execution time: {:.2f} ms".format(time_elapsed * 1000))   
+       
+
         if actual_output == expected_output:
             print("\033[92mTest result: Passed\033[0m")
         else:
@@ -168,6 +187,7 @@ for i, test in enumerate(tests):
    # 4. If it is greater than the queried number, then search the second half of the list
    # 5. If no more elements remain, return -1.
  
+
 
 
 
