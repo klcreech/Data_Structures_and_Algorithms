@@ -5,7 +5,7 @@
 
 # We need to write a program to find the position of a given number in a list
 # of numbers arranged in decreasing order. We also need to minimize the number
-# of times we access elements from the list. Identifu input and output formats.
+# of times we access elements from the list. Identify input and output formats.
 
 
 
