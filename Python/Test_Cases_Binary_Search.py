@@ -18,7 +18,7 @@
 
 import timeit
 
-# Test Function
+# Test Function ( Step 1 )
 
 def locate_card(cards, query):
      # Create a variable position with the value 0
@@ -34,7 +34,7 @@ def locate_card(cards, query):
     # Number not found, return -1
     return -1
 
-# Function (linear search)
+# Function (linear search) ( Step 4 )
 def locate_card_linear(cards, query):
     position = 0
     while position < len(cards):
@@ -43,7 +43,7 @@ def locate_card_linear(cards, query):
         position += 1
     return -1
 
-# Function (binary search)
+# Function (binary search) ( Step 7 )
 def locate_card_binary(cards, query):
     lo, hi = 0, len(cards) - 1
 
