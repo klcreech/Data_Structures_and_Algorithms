@@ -35,13 +35,21 @@ def locate_card(cards, query):
 # Test cases with various included edge cases
 
 tests = [
-    # query occurs in the middle
+    # base test
+   {
+    'input': { 
+        'cards': [13, 11, 10, 7, 4, 3, 1, 0], 
+        'query': 7
+    },
+    'output': 3
+    },
+     # query occurs in the middle
     {
-        'input': { 
-            'cards': [13, 11, 10, 7, 4, 3, 1, 0], 
-            'query': 7
-        },
-        'output': 3
+        'input': {
+            'cards': [13, 11, 10, 7, 4, 3, 1, 0],
+            'query': 1
+    },
+    'output': 6
     },
     # query is the first element
     {
@@ -79,6 +87,10 @@ tests = [
     # 4. If not, increment the value of position by 1, and repeat steps 2 to 5 till we reach the last position.
     # 5. If the number was not found, return -1.
 
+    # Step 4. 
+
+    # Implement the solution and test it using example inputs. Fix bugs, if any
+
     # cards does not contain query
     {
         'input': {
@@ -111,10 +123,11 @@ tests = [
        },
         'output': 2
     }
+  
 
 ]
 
-# Run test cases and handle index errors
+# Run test cases and handle index errors ( bugs fixed )
 
 for i, test in enumerate(tests):
     try:
@@ -133,4 +146,29 @@ for i, test in enumerate(tests):
             print("\033[91mTest result: Failed\033[0m")
     except Exception as e:
         print("\033[91mTest case ", i+1, " - Failed: ", e, "\033[0m")
+
+    
+# Step 5
+
+    # Analyze the algorithm's complexity and identify inefficiencies, if any.
+
+    # Instead of using brute force linear search find solution for binary search
+
+# Step 6
+
+  #  Apply the right technique to overcome the inefficiency. Repeat steps 3 to 6.  
+
+# Step 7
+ 
+  # Come up with a correct solution for the problem. State it in plain English
+
+   # 1. Find the middle element of the list.
+   # 2. If it matches queried number, return the middle position as the answer.
+   # 3. If it is less than the queried number, then search the first half of the list
+   # 4. If it is greater than the queried number, then search the second half of the list
+   # 5. If no more elements remain, return -1.
+ 
+
+
+
 
