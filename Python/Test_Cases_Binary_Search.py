@@ -227,7 +227,6 @@ for i, test in enumerate(tests):
 
     # Test locate_card_linear function
     print(f"\nTest {i+1} for locate_card_linear:\n{'-'*30}")
-    #print(f"Input: cards={cards}, query={query}")
     print(f"Expected Output: {expected_output}")
 
     locate_card_linear_time = timeit.timeit(lambda: locate_card_linear(cards, query), number=10000)
@@ -235,7 +234,6 @@ for i, test in enumerate(tests):
 
     # Test locate_card_binary function
     print(f"\nTest {i+1} for locate_card_binary:\n{'-'*30}")
-    #print(f"Input: cards={cards}, query={query}")
     print(f"Expected Output: {expected_output}")
 
     locate_card_binary_time = timeit.timeit(lambda: locate_card_binary(cards, query), number=10000)
