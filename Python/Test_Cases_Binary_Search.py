@@ -7,9 +7,7 @@
 # of numbers arranged in decreasing order. We also need to minimize the number
 # of times we access elements from the list. Identifu input and output formats.
 
-# Step 2 
 
-# Come up with some example inputs & outputs. Try to cover all edge cases.
 
 import timeit
 
@@ -52,7 +50,11 @@ def locate_card_binary(cards, query):
             hi = mid - 1
 
     return -1
-# Test cases with various included edge cases
+
+# Step 2 
+
+# Come up with some example inputs & outputs. Try to cover all edge cases.
+
 
 tests = [
     # base test
