@@ -1,7 +1,19 @@
+# Lesson 1 - Binary Search, Linked Lists and Complexity
+# the following is a test function for the binary search used to test various queries
+
+# Step 1
+
+# We need to write a program to find the position of a given number in a list
+# of numbers arranged in decreasing order. We also need to minimize the number
+# of times we access elements from the list. Identifu input and output formats.
+
+# Step 2 
+
+# Come up with some example inputs & outputs. Try to cover all edge cases.
+
 import timeit
 
-
-# Function
+# Test Function
 
 def locate_card(cards, query):
      # Create a variable position with the value 0
@@ -17,38 +29,29 @@ def locate_card(cards, query):
     # Number not found, return -1
     return -1
 
-# new
-
-def test_location(cards, query, mid):
-    mid_number = cards[mid]
-    print("mid:", mid, ", mid_number:", mid_number)
-    if mid_number == query:
-        if mid-1 >= 0 and cards[mid-1] == query:
-            return 'left'
-        else:
-            return 'found'
-    elif mid_number < query:
-        return 'left'
-    else:
-        return 'right'
-
-def locate_card_new(cards, query):
-    lo, hi = 0, len(cards) - 1
-    
-    while lo <= hi:
-        print("lo:", lo, ", hi:", hi)
-        mid = (lo + hi) // 2
-        result = test_location(cards, query, mid)
-        
-        if result == 'found':
-            return mid
-        elif result == 'left':
-            hi = mid - 1
-        elif result == 'right':
-            lo = mid + 1
+# Function (linear search)
+def locate_card_linear(cards, query):
+    position = 0
+    while position < len(cards):
+        if cards[position] == query:
+            return position
+        position += 1
     return -1
 
+# Function (binary search)
+def locate_card_binary(cards, query):
+    lo, hi = 0, len(cards) - 1
 
+    while lo <= hi:
+        mid = (lo + hi) // 2
+        if cards[mid] == query:
+            return mid
+        elif cards[mid] < query:
+            lo = mid + 1
+        else:
+            hi = mid - 1
+
+    return -1
 # Test cases with various included edge cases
 
 tests = [
@@ -156,15 +159,15 @@ for i, test in enumerate(tests):
         print("Test case ", i+1, " - Input: ", test['input'])
         print("Expected output: ", expected_output)
         print("Actual output: ", actual_output)
-        print("Execution time: {:.2f} ms".format(time_elapsed * 1000))   
-       
-
+        print("Execution time: {:.2f} ms".format(time_elapsed * 1000))
         if actual_output == expected_output:
             print("\033[92mTest result: Passed\033[0m")
         else:
             print("\033[91mTest result: Failed\033[0m")
     except Exception as e:
         print("\033[91mTest case ", i+1, " - Failed: ", e, "\033[0m")
+
+    
 
     
 # Step 5
@@ -187,8 +190,55 @@ for i, test in enumerate(tests):
    # 4. If it is greater than the queried number, then search the second half of the list
    # 5. If no more elements remain, return -1.
  
+# new ( Binary Search ) vs ( Linear Search ) test
 
+# Test cases
+tests = [
+    {
+        'input': {
+            'cards': [13, 11, 10, 7, 4, 3, 1, 0],
+            'query': 7
+        },
+        'output': 3
+    },
+    {
+        'input': {
+            'cards': list(range(100000, 0, -1)),
+            'query': 2
+        },
+        'output': 99998
+    }
+]
 
+# Run test cases and print execution times
+for i, test in enumerate(tests):
+    cards = test['input']['cards']
+    query = test['input']['query']
+    expected_output = test['output']
+
+    # Test locate_card_linear function
+    print(f"\nTest {i+1} for locate_card_linear:\n{'-'*30}")
+    #print(f"Input: cards={cards}, query={query}")
+    print(f"Expected Output: {expected_output}")
+
+    locate_card_linear_time = timeit.timeit(lambda: locate_card_linear(cards, query), number=10000)
+    print(f"Execution time for locate_card_linear: {locate_card_linear_time:.8f} seconds")
+
+    # Test locate_card_binary function
+    print(f"\nTest {i+1} for locate_card_binary:\n{'-'*30}")
+    #print(f"Input: cards={cards}, query={query}")
+    print(f"Expected Output: {expected_output}")
+
+    locate_card_binary_time = timeit.timeit(lambda: locate_card_binary(cards, query), number=10000)
+    print(f"Execution time for locate_card_binary: {locate_card_binary_time:.8f} seconds")
+
+    # Compare the execution times
+    if locate_card_linear_time < locate_card_binary_time:
+        print("The locate_card_linear function is faster.")
+    elif locate_card_linear_time > locate_card_binary_time:
+        print("The locate_card_binary function is faster.")
+    else:
+        print("Both functions have the same execution time.")
 
 
 
