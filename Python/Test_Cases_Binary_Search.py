@@ -1,7 +1,12 @@
 # Lesson 1 - Binary Search, Linked Lists and Complexity
 # the following is a test function for the binary search used to test various queries
 
+# Problem:
 
+# Alice has some cards with numbers written on them. She arranges the cards in decreasing
+# order, and lays them out face down in a sequence on a table. She challenges Bob to pick
+# out the card containing a given number by turning over as few cards as possible. Write
+# a function to help Bob locate the card.
 
 # Step 1
 
@@ -53,9 +58,7 @@ def locate_card_binary(cards, query):
 
     return -1
 
-# Step 2 
 
-# Come up with some example inputs & outputs. Try to cover all edge cases.
 
 
 tests = [
