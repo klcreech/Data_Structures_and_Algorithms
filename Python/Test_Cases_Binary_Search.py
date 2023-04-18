@@ -8,11 +8,7 @@
 # out the card containing a given number by turning over as few cards as possible. Write
 # a function to help Bob locate the card.
 
-# Step 1
 
-# We need to write a program to find the position of a given number in a list
-# of numbers arranged in decreasing order. We also need to minimize the number
-# of times we access elements from the list. Identify input and output formats.
 
 
 
