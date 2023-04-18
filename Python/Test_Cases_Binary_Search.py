@@ -58,7 +58,9 @@ def locate_card_binary(cards, query):
 
     return -1
 
+# Step 2 
 
+# Come up with some example inputs & outputs. Try to cover all edge cases.
 
 
 tests = [
