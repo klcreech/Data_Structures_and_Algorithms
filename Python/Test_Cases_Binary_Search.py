@@ -224,7 +224,7 @@ for i, test in enumerate(tests):
  # Analyze the algorithm's complexity and identify inefficiencies, if any.
 
  
-# new ( Binary S arch ) vs ( Linear Search ) test
+# new ( Binary Search ) vs ( Linear Search ) test
 
 # Test cases
 tests = [
