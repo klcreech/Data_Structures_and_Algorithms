@@ -1,30 +1,59 @@
-#this is a python course by Jovian as I go through the courses I post them here
+#this is a python course by Jovian as I go through the courses I poost them here
 # Lesson 1 - Binary Search, Linked Lists and Complexity
 
+# - The Method
 
-def test_location(cards, query, mid):
-    if cards[mid] == query:
-        if mid-1 >= 0 and cards[mid-1] == query:
-            return 'left'
-        else:
-            return 'found'
-    elif cards[mid] < query:
-        return 'left'
-    else:
-        return 'right'
+# 1. State the problem clearly. Identify the input & output formats.
+# 2. Come up with some example inputs & outputs. Try to cover all edge cases.
+# 3. Come up with a correct solution for the problem. State it in plain English.
+# 4. Implement the solution and test it using example inputs. Fix bugs, if any.
+# 5. Analyze the algorithm's complexity and identify inefficiencies, if any.
+# 6. Apply the right technique to overcome the inefficiency. Repeat steps 3 to 6.
 
-def locate_card(cards, query):
-    lo, hi = 0, len(cards) - 1
-    while lo <= hi:
-        mid = (lo + hi) // 2
-        result = test_location(cards, query, mid)
-        if result == 'found':
-            return mid
-        elif result == 'left':
-            hi = mid - 1
-        elif result == 'right':
-            lo = mid + 1
-    return -1
+
+# Assignemnt Problem:
+
+# QUESTION 1: 
+
+# Alice has some cards with numbers written on them. She arranges
+# the cards in decreasing order, and lays them out face down in a sequence on 
+# a table. She challenges Bob to pick out the card containing a given number
+# by turning over as few cards as possible. Write a function to help Bob locate
+# the card.
+
+
+
+import timeit
+
+
+
+def first_position(nums, target):
+        def condition(mid):
+            if nums[mid] == target:
+                if mid > 0 and nums[mid-1] == target:
+                    return 'left'
+                return 'found'
+            elif nums[mid] < target:
+                return 'right'
+            else:
+                return 'left'
+        return binary_search(0, len(nums)-1, condition)
+
+    def last_position(nums, target):
+        def condition(mid):
+            if nums[mid] == target:
+                if mid < len(nums)-1 and nums[mid+1] == target:
+                    return 'right'
+                return 'found'
+            elif nums[mid] < target:
+                return 'right'
+            else:
+                return 'left'
+        return binary_search(0, len(nums)-1, condition)
+
+    def first_and_last_position(nums, target):
+        return first_position(nums, target), last_position(nums, target)
+
 
 
 cards = ['2C', '4D', '6H', '8S', '10C', 'QD', 'KH']
