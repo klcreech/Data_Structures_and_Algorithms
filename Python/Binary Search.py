@@ -22,12 +22,10 @@
 # the card.
 
 
-
 import timeit
 
-
-
-def first_position(nums, target):
+def locate_card(cards, query):
+    def first_position(nums, target):
         def condition(mid):
             if nums[mid] == target:
                 if mid > 0 and nums[mid-1] == target:
@@ -54,14 +52,13 @@ def first_position(nums, target):
     def first_and_last_position(nums, target):
         return first_position(nums, target), last_position(nums, target)
 
+cards = [10, 9, 8, 7, 7, 5, 4, 2]
+query = 7
+
+def run_search():
+    locate_card(cards, query)
+
+elapsed_time = timeit.timeit(run_search, number=1000) * 1000  # in milliseconds
+print(f"Elapsed time: {elapsed_time:.2f} ms")
 
 
-cards = ['2C', '4D', '6H', '8S', '10C', 'QD', 'KH']
-query = '8S'
-
-print("Searching for card:", query)
-index = locate_card(cards, query)
-if index != -1:
-    print("Card found at index:", index)
-else:
-    print("Card not found in list.")
