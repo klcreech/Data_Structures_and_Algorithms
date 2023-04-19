@@ -217,6 +217,8 @@ for i, test in enumerate(tests):
 
 # Step 8
 
+  # Implement the solution and test it using example inputs. Fix bugs, if any.
+
    # 5. If no more elements remain, return -1.
  
 # new ( Binary Search ) vs ( Linear Search ) test
