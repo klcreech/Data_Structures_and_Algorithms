@@ -43,20 +43,35 @@ def locate_card_linear(cards, query):
         position += 1
     return -1
 
-# Function (binary search) ( Step 7 )
+# Function (binary search) ( Step 7, 8, 9 )
 def locate_card_binary(cards, query):
-    lo, hi = 0, len(cards) - 1
+    
+    def first_position(nums, target):
+        def condition(mid):
+            if nums[mid] == target:
+                if mid > 0 and nums[mid-1] == target:
+                    return 'left'
+                return 'found'
+            elif nums[mid] < target:
+                return 'right'
+            else:
+                return 'left'
+        return binary_search(0, len(nums)-1, condition)
 
-    while lo <= hi:
-        mid = (lo + hi) // 2
-        if cards[mid] == query:
-            return mid
-        elif cards[mid] < query:
-            lo = mid + 1
-        else:
-            hi = mid - 1
+    def last_position(nums, target):
+        def condition(mid):
+            if nums[mid] == target:
+                if mid < len(nums)-1 and nums[mid+1] == target:
+                    return 'right'
+                return 'found'
+            elif nums[mid] < target:
+                return 'right'
+            else:
+                return 'left'
+        return binary_search(0, len(nums)-1, condition)
 
-    return -1
+    def first_and_last_position(nums, target):
+        return first_position(nums, target), last_position(nums, target)
 
 # Step 2 
 
@@ -199,6 +214,9 @@ for i, test in enumerate(tests):
    # 2. If it matches queried number, return the middle position as the answer.
    # 3. If it is less than the queried number, then search the first half of the list
    # 4. If it is greater than the queried number, then search the second half of the list
+
+# Step 8
+
    # 5. If no more elements remain, return -1.
  
 # new ( Binary Search ) vs ( Linear Search ) test
