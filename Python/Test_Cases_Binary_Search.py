@@ -219,9 +219,12 @@ for i, test in enumerate(tests):
 
   # Implement the solution and test it using example inputs. Fix bugs, if any.
 
-   # 5. If no more elements remain, return -1.
+# Step 9
+
+ # Analyze the algorithm's complexity and identify inefficiencies, if any.
+
  
-# new ( Binary Search ) vs ( Linear Search ) test
+# new ( Binary S arch ) vs ( Linear Search ) test
 
 # Test cases
 tests = [
