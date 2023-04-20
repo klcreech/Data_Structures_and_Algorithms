@@ -227,12 +227,7 @@ for i, test in enumerate(tests):
 
   # Implement the solution and test it using example inputs. Fix bugs, if any.
 
-# Step 5
 
- # Analyze the algorithm's complexity and identify inefficiencies, if any.
-
- 
-# new ( Binary Search ) vs ( Linear Search ) test
 
 # Test cases
 tests = [
@@ -251,6 +246,13 @@ tests = [
         'output': 99998
     }
 ]
+
+# Step 5
+
+ # Analyze the algorithm's complexity and identify inefficiencies, if any.
+
+ 
+# new ( Binary Search ) vs ( Linear Search ) test
 
 # Run test cases and print execution times
 for i, test in enumerate(tests):
