@@ -122,7 +122,6 @@ tests = [
     # issue with test 6
     # Come up with a correct solution for the problem. State it in plain English
 
-
     # 1. Create a variable position with the value 0.
     # 2. Check whether the number at index position in card equals query.
     # 3. If it does, position is the answer and can be returned from the function
