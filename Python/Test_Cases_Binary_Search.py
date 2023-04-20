@@ -18,6 +18,7 @@
 # 5. Analyze the algorithm's complexity and identify inefficiencies, if any.
 # 6. Apply the right technique to overcome the inefficiency. Repeat steps 3 to 6.
 
+
 # Step 1
 
 # We need to write a program to find the position of a given number in a list
@@ -213,7 +214,7 @@ for i, test in enumerate(tests):
 
   #  Apply the right technique to overcome the inefficiency. Repeat steps 3 to 6.  
 
-# Step 7
+# Step 3
  
   # Come up with a correct solution for the problem. State it in plain English
 
@@ -222,11 +223,11 @@ for i, test in enumerate(tests):
    # 3. If it is less than the queried number, then search the first half of the list
    # 4. If it is greater than the queried number, then search the second half of the list
 
-# Step 8
+# Step 4
 
   # Implement the solution and test it using example inputs. Fix bugs, if any.
 
-# Step 9
+# Step 5
 
  # Analyze the algorithm's complexity and identify inefficiencies, if any.
 
