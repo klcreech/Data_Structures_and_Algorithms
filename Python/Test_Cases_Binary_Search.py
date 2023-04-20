@@ -14,8 +14,6 @@
 # of numbers arranged in decreasing order. We also need to minimize the number
 # of times we access elements from the list. Identify input and output formats.
 
-
-
 import timeit
 
 # Test Function ( Step 1 )
