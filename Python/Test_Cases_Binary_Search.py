@@ -107,7 +107,7 @@ tests = [
     # query is the first element
     {
         'input': {
-            'cards': [4, 2, 1, ],
+            'cards': [4, 2, 1, -1],
             'query': 4
         },
         'output': 0
