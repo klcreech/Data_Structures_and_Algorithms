@@ -91,7 +91,7 @@ tests = [
     # base test
    {
     'input': { 
-        'cards': [13, 11, 10, 7, 4, 3, 1, 0], 
+        'cards': [13, 11, 10, 7, 4, 3, 1, ], 
         'query': 7
     },
     'output': 3
