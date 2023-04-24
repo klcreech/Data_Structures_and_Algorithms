@@ -25,3 +25,7 @@ node1 = Node()
 node2 = Node()
 #create variable node3 pointing to node1 object
 node3 = node1
+# Add node4
+node4 = Node()
+# change stored data to ten
+node4.data = 10
