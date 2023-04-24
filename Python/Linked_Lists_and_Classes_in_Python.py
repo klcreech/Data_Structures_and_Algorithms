@@ -20,3 +20,5 @@ class Node:
 node1 = Node()
 #create object node2
 node2 = Node()
+#create variable node3 pointing to node1 object
+node3 = node1
