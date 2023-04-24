@@ -10,3 +10,9 @@
 
   # A linked list is a data structure used for storing a sequence of elements. 
   # It's data with some structure (the sequence).
+
+#create a class named Node
+class Node:
+    def __init__(self, data=None):
+        self.data = data
+        self.next = None
