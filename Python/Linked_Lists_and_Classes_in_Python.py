@@ -16,5 +16,7 @@ class Node:
     def __init__(self, data=None):
         self.data = data
         self.next = None
-#create object
+#create object node1
 node1 = Node()
+#create object node2
+node2 = Node()
