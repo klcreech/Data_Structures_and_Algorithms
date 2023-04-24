@@ -14,8 +14,11 @@
 #create a class named Node
 class Node:
     def __init__(self, data=None):
-        self.data = data
-        self.next = None
+          #Store value 0
+          self.data = 0
+        if data is not None:
+            self.data = data
+        self.next = Non
 #create object node1
 node1 = Node()
 #create object node2
