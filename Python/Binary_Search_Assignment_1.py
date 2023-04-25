@@ -33,4 +33,20 @@
 # and determine the minimum number of times the original sorted list was rotated to
 # obtain the given list
 
-# State - input formats
+# State - input / output formats
+
+    # Q: The function you write will take one input called nums. What does it represent? Give an example.
+
+    # Input
+
+        # nums: nums = [7, 8, 9, 10, 1, 2, 3, 4, 5, 6]
+
+        # nums represents a list of numbers that has been obtained by rotating a sorted list an unknown number of times
+
+    # Q: The function you write will return a single output called rotations. What does it represent? Give an example.
+
+    # Output
+
+        # rotations: rotations = count_rotations(nums)
+
+        # rotations represents the minimum number of times the original sorted list was rotated to obtain the given list
