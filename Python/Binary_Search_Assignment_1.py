@@ -24,3 +24,13 @@
 # 5. Analyze the algorithm's complexity and identify inefficiencies, if any.
 # 6. Apply the right technique to overcome the inefficiency. Repeat steps 3 to 6.
 
+# Step 1 
+
+# State - the problem clearly
+
+# We need to write a program that utilizes a function with a worst-case complexity
+# of O(log N) that takes a list of unique numbers sorted an unknown number of times
+# and determine the minimum number of times the original sorted list was rotated to
+# obtain the given list
+
+# State - input formats
