@@ -50,3 +50,42 @@
         # rotations: rotations = count_rotations(nums)
 
         # rotations represents the minimum number of times the original sorted list was rotated to obtain the given list
+
+
+# From this we create the base function:
+import timeit
+
+def count_rotations(nums):
+    pass
+
+
+# Step 2
+
+# Come up with some example inputs & outputs. Try to cover all edge cases.
+
+test = {
+    'input': {
+        'nums': [19, 25, 29, 3, 5, 6, 7, 9, 11, 14]
+    },
+    'output': 3
+}
+
+input_nums = test['input']['nums']
+expected_output = test['output']
+
+start_time = timeit.default_timer()
+actual_output = count_rotations(input_nums)
+end_time = timeit.default_timer()
+
+if actual_output == expected_output:
+    print("Input:", input_nums)
+    print("Expected output:", expected_output)
+    print("Actual output:", actual_output)
+    print("Execution time:", (end_time - start_time) * 1000, "ms")
+    print("\033[0;32mTest passed!\033[0m")
+else:
+    print("Input:", input_nums)
+    print("Expected output:", expected_output)
+    print("Actual output:", actual_output)
+    print("Execution time:", (end_time - start_time) * 1000, "ms")
+    print("\033[0;31mTest failed!\033[0m")
