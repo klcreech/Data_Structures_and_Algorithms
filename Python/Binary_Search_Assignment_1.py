@@ -63,29 +63,61 @@ def count_rotations(nums):
 
 # Come up with some example inputs & outputs. Try to cover all edge cases.
 
-test = {
-    'input': {
-        'nums': [19, 25, 29, 3, 5, 6, 7, 9, 11, 14]
-    },
-    'output': 3
-}
 
-input_nums = test['input']['nums']
-expected_output = test['output']
+tests = [
+    # A list of size 10 rotated 3 times.
+    {'input': {'nums': [19, 25, 29, 3, 5, 6, 7, 9, 11, 14]}, 'output': 3},
 
-start_time = timeit.default_timer()
-actual_output = count_rotations(input_nums)
-end_time = timeit.default_timer()
+    # A list of size 8 rotated 5 times
+    {'input': {'nums': [7, 8, 1, 2, 3, 4, 5, 6]}, 'output': 2},
 
-if actual_output == expected_output:
-    print("Input:", input_nums)
-    print("Expected output:", expected_output)
-    print("Actual output:", actual_output)
-    print("Execution time:", (end_time - start_time) * 1000, "ms")
-    print("\033[0;32mTest passed!\033[0m")
-else:
-    print("Input:", input_nums)
-    print("Expected output:", expected_output)
-    print("Actual output:", actual_output)
-    print("Execution time:", (end_time - start_time) * 1000, "ms")
-    print("\033[0;31mTest failed!\033[0m")
+    # A list that wasn't rotated at all.
+    {'input': {'nums': [1, 2, 3, 4, 5, 6, 7, 8]}, 'output': 0},
+
+    # A list that was rotated just once
+    {'input': {'nums': [8, 1, 2, 3, 4, 5, 6, 7]}, 'output': 1},
+
+    # A list that was rotated n-1 times, where n is the size of the list.
+    {'input': {'nums': [5, 6, 7, 8, 1, 2, 3, 4]}, 'output': 4},
+
+    # A list that was rotated n times (do you get back the original list here?)
+    {'input': {'nums': [4, 5, 6, 7, 8, 1, 2, 3]}, 'output': 5},
+
+    # An empty list.
+    {'input': {'nums': []}, 'output': 0},
+
+    # A list containing just one element.
+    {'input': {'nums': [42]}, 'output': 0},
+
+    # (more)
+
+    # A list containing multiple identical elements
+    {'input': {'nums': [3, 3, 3, 1, 2]}, 'output': 3},
+
+    # A list containing only decreasing elements
+    {'input': {'nums': [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]}, 'output': 9}
+]
+
+
+# Run test cases and handle index errors ( bugs fixed )
+
+for i, test in enumerate(tests):
+    input_nums = test['input']['nums']
+    expected_output = test['output']
+
+    start_time = timeit.default_timer()
+    actual_output = count_rotations(input_nums)
+    end_time = timeit.default_timer()
+
+    if actual_output == expected_output:
+        print("\033[92mTest result: Passed\033[0m")
+        print("Input:", input_nums)
+        print("Expected output:", expected_output)
+        print("Actual output:", actual_output)
+        print("Execution time:", (end_time - start_time) * 1000, "ms\n")
+    else:
+        print("\033[91mTest case ", i+1, " - Failed: ", "\033[0m")
+        print("Input:", input_nums)
+        print("Expected output:", expected_output)
+        print("Actual output:", actual_output)
+        print("Execution time:", (end_time - start_time) * 1000, "ms\n") 
