@@ -69,7 +69,7 @@ tests = [
     {'input': {'nums': [19, 25, 29, 3, 5, 6, 7, 9, 11, 14]}, 'output': 3},
 
     # A list of size 8 rotated 5 times
-    {'input': {'nums': [7, 8, 1, 2, 3, 4, 5, 6]}, 'output': 2},
+    {'input': {'nums': [4, 5, 6, 7, 8, 1, 2, 3]}, 'output': 5},
 
     # A list that wasn't rotated at all.
     {'input': {'nums': [1, 2, 3, 4, 5, 6, 7, 8]}, 'output': 0},
@@ -81,7 +81,7 @@ tests = [
     {'input': {'nums': [5, 6, 7, 8, 1, 2, 3, 4]}, 'output': 4},
 
     # A list that was rotated n times (do you get back the original list here?)
-    {'input': {'nums': [4, 5, 6, 7, 8, 1, 2, 3]}, 'output': 5},
+    {'input': {'nums': [3, 5, 7, 8, 9, 10]}, 'output': 0},    
 
     # An empty list.
     {'input': {'nums': []}, 'output': 0},
