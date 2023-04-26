@@ -121,3 +121,30 @@ for i, test in enumerate(tests):
         print("Expected output:", expected_output)
         print("Actual output:", actual_output)
         print("Execution time:", (end_time - start_time) * 1000, "ms\n") 
+
+
+# Step 3 
+
+    # Come up with a correct solution for the problem. State it in plain English.
+
+    # Problem
+
+    # Coming up with the correct solution is quite easy, and it's based on this insight:
+    # If a list of sorted numbers is rotated k times, then the smallest number in the list
+    # ends up at position k (counting from 0). Further, it is the only number in the list
+    # which is smaller than the number before it. Thus, we simply need to check for each
+    # number in the list whether it is smaller than the number that comes before it 
+    # (if there is a number before it). Then, our answer i.e. the number of rotations 
+    # is simply the position of this number is . If we cannot find such a number, 
+    #  then the list wasn't rotated at all.
+
+       # Example: In the list [19, 25, 29, 3, 5, 6, 7, 9, 11, 14], 
+       # the number 3 is the only number smaller than its predecessor.
+       # It occurs at the position 3 (counting from 0), hence the array was rotated 3 times.
+    
+    # Describe the linear search solution explained above problem in your own words.
+       
+       # 1. Create  a variable position with value 1
+       # 2. Compare the number at current position to the number before it.
+       # 3. If the number is smaller than its predecessor, then return position.
+       # 4. Otherwise, increment position and repeat until we exhaust all the numbers.
