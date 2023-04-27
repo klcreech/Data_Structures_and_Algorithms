@@ -170,3 +170,12 @@ for i, test in enumerate(tests):
 
     # Implement the solution and test it using example inputs. Fix bugs, if any.
     # Implement the solution ( Correct Function )  described in step 3
+
+# Step 5 
+
+   # Analyze the algorithm's complexity and identify inefficiencies, if any.
+
+      # Q. What is the worst-case complexity (running time) of the algorithm
+      # expressed in the Big O Notation? Assume that the size of the list is N (uppercase)?
+
+      # A: linear_search_complexity = "O(N)"
