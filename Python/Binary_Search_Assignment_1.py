@@ -122,7 +122,7 @@ for i, test in enumerate(tests):
     expected_output = test['output']
 
     start_time = timeit.default_timer()
-    actual_output = count_rotations_linear(input_nums)
+    actual_output = count_rotations_linear(input_nums) # modify which test function to use here
     end_time = timeit.default_timer()
 
     if actual_output == expected_output:
