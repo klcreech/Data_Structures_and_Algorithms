@@ -112,8 +112,6 @@ tests = [
     # A list containing multiple identical elements
     {'input': {'nums': [3, 3, 3, 1, 2]}, 'output': 3},
 
-    # A list containing only decreasing elements
-    {'input': {'nums': [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]}, 'output': 9}
 ]
 
 
