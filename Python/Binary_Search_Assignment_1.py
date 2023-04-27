@@ -59,6 +59,24 @@ def count_rotations(nums):
     pass
 
 
+
+# Step 4 - Test Linear Seach Function 
+def count_rotations_linear(nums):
+    position = 0       # What is the intial value of position?
+    
+    while position<len(nums):    # When should the loop be terminated?
+        
+        # Success criteria: check whether the number at the current position is smaller than the one before it
+
+        if position > 0 and nums[position] < nums[position -1]:   # How to perform the check?
+            return position
+        
+        # Move to the next position
+        position += 1
+    
+    return 0       # What if none of the positions passed the check  
+
+
 # Step 2
 
 # Come up with some example inputs & outputs. Try to cover all edge cases.
@@ -106,7 +124,7 @@ for i, test in enumerate(tests):
     expected_output = test['output']
 
     start_time = timeit.default_timer()
-    actual_output = count_rotations(input_nums)
+    actual_output = count_rotations_linear(input_nums)
     end_time = timeit.default_timer()
 
     if actual_output == expected_output:
@@ -148,3 +166,9 @@ for i, test in enumerate(tests):
        # 2. Compare the number at current position to the number before it.
        # 3. If the number is smaller than its predecessor, then return position.
        # 4. Otherwise, increment position and repeat until we exhaust all the numbers.
+
+
+# Step 4
+
+    # Implement the solution and test it using example inputs. Fix bugs, if any.
+    # Implement the solution ( Correct Function )  described in step 3
