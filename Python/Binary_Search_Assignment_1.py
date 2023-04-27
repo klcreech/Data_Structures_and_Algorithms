@@ -51,9 +51,9 @@
 
         # rotations represents the minimum number of times the original sorted list was rotated to obtain the given list
 
+import timeit
 
 # From this we create the base function:
-import timeit
 
 def count_rotations(nums):
     pass
