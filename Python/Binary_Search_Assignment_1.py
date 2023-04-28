@@ -59,8 +59,8 @@ def count_rotations(nums):
     pass
 
 
-
-# Step 4 - Test Linear Seach Function 
+# Step 4 - Test Linear Seach Function
+ 
 def count_rotations_linear(nums):
     position = 0       # What is the intial value of position?
     
