@@ -109,8 +109,8 @@ tests = [
 
     # (more)
 
-    # A list containing multiple identical elements
-    {'input': {'nums': [3, 3, 3, 1, 2]}, 'output': 3},
+    # A list with multiple rotations.
+    {'input': {'nums': [7, 8, 9, 1, 2, 3, 4, 5, 6]}, 'output': 3}
 
 ]
 
