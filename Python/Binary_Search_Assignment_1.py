@@ -108,6 +108,7 @@ tests = [
     {'input': {'nums': [42]}, 'output': 0},
 
     # (more)
+    
 
     # A list with multiple rotations.
     {'input': {'nums': [7, 8, 9, 1, 2, 3, 4, 5, 6]}, 'output': 3}
