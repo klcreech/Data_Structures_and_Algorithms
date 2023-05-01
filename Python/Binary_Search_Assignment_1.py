@@ -81,7 +81,6 @@ def count_rotations_linear(nums):
 
 # Come up with some example inputs & outputs. Try to cover all edge cases.
 
-
 tests = [
     # A list of size 10 rotated 3 times.
     {'input': {'nums': [19, 25, 29, 3, 5, 6, 7, 9, 11, 14]}, 'output': 3},
