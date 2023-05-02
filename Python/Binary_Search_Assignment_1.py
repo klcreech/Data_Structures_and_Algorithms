@@ -179,3 +179,31 @@ for i, test in enumerate(tests):
       # expressed in the Big O Notation? Assume that the size of the list is N (uppercase)?
 
       # A: linear_search_complexity = "O(N)"
+
+# Step 6
+
+    # Apply the right technique to overcome the inefficiency. Repeat steps 3 to 6.
+
+    # Problem - Binary Search
+
+    # The key question we need to answer in binary search is: Given the middle element, 
+    # how to decide if it is the answer (smallest number), or whether the answer lies 
+    # to the left or right of it.
+
+    # If the middle element is smaller than its predecessor, then it is the answer. 
+    # However, if it isn't, this check is not sufficient to determine whether the answer
+    # lies to the left or the right of it. Consider the following examples.
+
+    # [7, 8, 1, 3, 4, 5, 6] (answer lies to the left of the middle element)
+
+    # [1, 2, 3, 4, 5, -1, 0] (answer lies to the right of the middle element)
+
+    # Here's a check that will help us determine if the answer lies to the left or
+    # the right: If the middle element of the list is smaller than the last element 
+    # of the range, then the answer lies to the left of it. Otherwise, the answer
+    # lies to the right.
+
+    # Step 3 ( Binary Search )
+    
+    # Come up with a correct solution for the above problem. State it in plain English.
+
