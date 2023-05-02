@@ -204,6 +204,18 @@ for i, test in enumerate(tests):
     # lies to the right.
 
     # Step 3 ( Binary Search )
-    
+
     # Come up with a correct solution for the above problem. State it in plain English.
+
+         # 1. Start by setting the left index to the first element of the list and the 
+         #    right index to the last element.
+
+         # 2. Check to see if the middle element is less than its predessessor.
+
+         # 3. if istep 2 is not then check to see if the middle element is smaller
+         #    than the last  element of the list, if so you know the answer is to the
+         #    left of the middle number.
+
+         # 4. However if the middle number is greater than the last elemnt in the list then the
+         #    correct element should be at the right based on a rotated sorted list.
 
