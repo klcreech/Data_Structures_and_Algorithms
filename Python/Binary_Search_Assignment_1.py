@@ -74,7 +74,33 @@ def count_rotations_linear(nums):
         # Move to the next position
         position += 1
     
-    return 0       # What if none of the positions passed the check  
+    return 0       # What if none of the positions passed the check 
+
+# Step 4 ( Binary Search )
+
+def count_rotations_binary(nums):
+    lo = 0       
+    hi = len(nums)-1
+    
+    while lo <= hi:
+       mid = (lo + hi) // 2
+       mid_number = nums[mid]
+       #uncomment the next line for logging the values and fixing errors
+       # print( "lo:", lo, ", hi:", hi, ",mid:" ",mid_number:", mid)
+
+    if mid > 0 and mid_number < nums[mid-1]:
+        # the mid position is the answer 
+        return mid  
+         
+    elif mid_number < nums[hi]:
+        # Answer lies on the left half
+        hi = mid - 1
+        
+    else:
+        # Answer lies in the right half
+        lo = mid + 1
+    
+    return 0          
 
 
 # Step 2
@@ -219,5 +245,8 @@ for i, test in enumerate(tests):
          # 4. However if the middle number is greater than the last elemnt in the list then the
          #    correct element should be at the right based on a rotated sorted list.
 
+   # Step 4 ( Binary Search )
 
+   # Implement the solution and test it using example inputs. Fix bugs, if any.
+   # Binary Search Placed under linear fuckin all test cases pass
 
