@@ -248,5 +248,5 @@ for i, test in enumerate(tests):
    # Step 4 ( Binary Search )
 
    # Implement the solution and test it using example inputs. Fix bugs, if any.
-   # Binary Search Placed under linear fuckin all test cases pass
+   # Binary Search Placed under linear function all test cases pass
 
