@@ -246,7 +246,6 @@ for i, test in enumerate(tests):
          #    correct element should be at the right based on a rotated sorted list.
 
   
-  
    # Step 4 ( Binary Search )
 
    # Implement the solution and test it using example inputs. Fix bugs, if any.
