@@ -132,8 +132,7 @@ tests = [
     # A list containing just one element.
     {'input': {'nums': [42]}, 'output': 0},
 
-    # (more)
-    
+    # (more)    
 
     # A list with multiple rotations.
     {'input': {'nums': [7, 8, 9, 1, 2, 3, 4, 5, 6]}, 'output': 3}
@@ -164,6 +163,26 @@ for i, test in enumerate(tests):
         print("Actual output:", actual_output)
         print("Execution time:", (end_time - start_time) * 1000, "ms\n") 
 
+    # added Step 5 to compare binary and linear run times
+    # Time the linear search function
+
+    linear_time = timeit.timeit(lambda: count_rotations_linear(input_nums), number=100000)
+    
+    # Time the binary search function
+    binary_time = timeit.timeit(lambda: count_rotations_linear(input_nums), number=100000)
+    
+    # Print the results
+    print(f"Test case: input_nums")
+    print(f"Expected output: {expected_output}")
+    
+    if linear_time < binary_time:
+        print("Linear search is faster")
+    else:
+        print("Binary search is faster")
+    
+    print(f"Linear search time: {linear_time:.6f}")
+    print(f"Binary search time: {binary_time:.6f}")
+    print()
 
 # Step 3 
 
@@ -248,10 +267,16 @@ for i, test in enumerate(tests):
   
    # Step 4 ( Binary Search )
 
-   
-
-   
 
    # Implement the solution and test it using example inputs. Fix bugs, if any.
    # Binary Search Placed under linear function all test cases pass
+
+   # Step 5 
+   #  
+   # Analyze the algorithm's complexity and identify inefficiencies, if any. 
+
+   # Added to for loop above to test comparison of binary and linear search
+   # Big 0 notation: ( Proof )
+   # Linear = O(n)
+   # Bianry = O(log n) - Binary is faster
 
