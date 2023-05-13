@@ -266,8 +266,7 @@ for i, test in enumerate(tests):
 
   
    # Step 4 ( Binary Search )
-
-
+   
    # Implement the solution and test it using example inputs. Fix bugs, if any.
    # Binary Search Placed under linear function all test cases pass
 
@@ -277,7 +276,6 @@ for i, test in enumerate(tests):
 
    # Added to for loop above to test comparison of binary and linear search
    
-
    
    # Big 0 notation: ( Proof )
    # Linear = O(n)
