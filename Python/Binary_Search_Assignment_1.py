@@ -270,6 +270,8 @@ for i, test in enumerate(tests):
    # Implement the solution and test it using example inputs. Fix bugs, if any.
    # Binary Search Placed under linear function all test cases pass
 
+   
+
    # Step 5 
    #  
    # Analyze the algorithm's complexity and identify inefficiencies, if any. 
