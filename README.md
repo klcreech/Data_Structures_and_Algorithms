@@ -1,2 +1,2 @@
 # Data_Structures_and_Algorithms
- Using Python to explore Data Structures and Algorithms
+ Using differnet languages to explore Data Structures and Algorithms
